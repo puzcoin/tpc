@@ -3186,7 +3186,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     //PoW: premine in block one, only fees after that. PoS: CoinStake plus fees.
     CAmount nExpectedMint = GetBlockValue(pindex->pprev->nHeight);
-    if (block.IsProofOfWork() && pindex->nHeight > 220)
+    if (block.IsProofOfWork() && pindex->nHeight > 240)
     {
         nExpectedMint = nFees;
     } else if (block.IsProofOfStake()) 
