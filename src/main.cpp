@@ -2124,7 +2124,7 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 10000 * COIN;
     } else if (nHeight >= 31 && nHeight <= 40) {
         nSubsidy = 2000 * COIN;
-    } else if (nHeight >= 41 && nHeight <= 240 ) {
+    } else if (nHeight >= 41 && nHeight <= 250 ) {
         nSubsidy = 100 * COIN;
     } else {
         nSubsidy = 2 * COIN;
@@ -2138,7 +2138,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight <= 240)
+        if (nHeight <= 250)
             return 0;
     }
 
@@ -3186,7 +3186,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     //PoW: premine in block one, only fees after that. PoS: CoinStake plus fees.
     CAmount nExpectedMint = GetBlockValue(pindex->pprev->nHeight);
-    if (block.IsProofOfWork() && pindex->nHeight > 240)
+    if (block.IsProofOfWork() && pindex->nHeight > 250)
     {
         nExpectedMint = nFees;
     } else if (block.IsProofOfStake()) 

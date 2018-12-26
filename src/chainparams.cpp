@@ -125,7 +125,7 @@ public:
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 240;                         // PoW Phase 3 End
+        nLastPOWBlock = 250;                         // PoW Phase 3 End
         nMidasStartHeight = 95550000;                   // MIDAS startheight, first big attack
         nMidasStartTime = 1837631395;                 // Time when MIDAS started and old algorithm stopped
         nDGWStartHeight = 95550000;                     // Startheight of DGW
